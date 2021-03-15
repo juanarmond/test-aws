@@ -9,8 +9,8 @@ from data_platform.environment import Environment
 
 class DataLakeLayer(Enum):
     RAW = 'raw'
-    PROCESSED = 'processed'
-    AGGREGATED = 'aggregated'
+    # PROCESSED = 'processed'
+    # AGGREGATED = 'aggregated'
 
 
 class BaseDataLakeBucket(s3.Bucket):
