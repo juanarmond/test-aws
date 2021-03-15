@@ -18,7 +18,6 @@ class DataLakeStack(core.Stack):
             layer=DataLakeLayer.RAW
         )
 
-
         self.data_lake_raw_bucket.add_lifecycle_rule(
             transitions=[
                 s3.Transition(
@@ -33,16 +32,16 @@ class DataLakeStack(core.Stack):
             enabled=True
         )
 
-        # # Data Lake Processed
-        # self.data_lake_processed_bucket = BaseDataLakeBucket(
-        #     self,
-        #     deploy_env=self.deploy_env,
-        #     layer=DataLakeLayer.PROCESSED
-        # )
-        #
-        # # Data Lake Aggregated
-        # self.data_lake_aggregated_bucket = BaseDataLakeBucket(
-        #     self,
-        #     deploy_env=self.deploy_env,
-        #     layer=DataLakeLayer.AGGREGATED
-        # )
+        # Data Lake Processed
+        self.data_lake_processed_bucket = BaseDataLakeBucket(
+            self,
+            deploy_env=self.deploy_env,
+            layer=DataLakeLayer.PROCESSED
+        )
+
+        # Data Lake Aggregated
+        self.data_lake_aggregated_bucket = BaseDataLakeBucket(
+            self,
+            deploy_env=self.deploy_env,
+            layer=DataLakeLayer.AGGREGATED
+        )

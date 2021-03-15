@@ -9,15 +9,15 @@ from data_platform.environment import Environment
 
 class DataLakeLayer(Enum):
     RAW = 'raw'
-    # PROCESSED = 'processed'
-    # AGGREGATED = 'aggregated'
+    PROCESSED = 'processed'
+    AGGREGATED = 'aggregated'
 
 
 class BaseDataLakeBucket(s3.Bucket):
     def __init__(self, scope: core.Construct, deploy_env: Environment, layer: DataLakeLayer, **kwargs):
         self.layer = layer
         self.deploy_env = deploy_env
-        self.obj_name = f's3-juan_armond-gusto-{self.deploy_env.value}-data-lake-{self.layer.value}'
+        self.obj_name = f's3-juanarmond-data-platform-{self.deploy_env.value}-data-lake-{self.layer.value}'
 
         super().__init__(
             scope,
