@@ -1,6 +1,5 @@
 -e .
 aws_cdk.aws_s3==1.92.0
-aws_cdk.aws_rds==1.92.0
 aws_cdk.aws_ec2==1.92.0
 aws_cdk.aws_redshift==1.92.0
 
